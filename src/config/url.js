@@ -5,4 +5,5 @@ export const APP_URL = {
   DISCOVER: "/discover",
   MANIFESTO: "/manifesto",
   UPGRADE: "/upgrade",
+  COMET: "/comet",
 };
