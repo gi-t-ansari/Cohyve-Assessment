@@ -21,7 +21,7 @@ const Navbar = () => {
   return isAuthenticated ? (
     <nav>Navbar</nav>
   ) : (
-    <nav className="w-full flex justify-center">
+    <nav className="w-full flex justify-center ">
       <Tabs value="html">
         <TabsHeader
           className={"rounded-2xl  flex justify-center gap-x-3"}

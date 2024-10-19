@@ -22,7 +22,7 @@ function ControlledInput({
       render={({ field, fieldState }) => (
         <div className="mb-2">
           {label && (
-            <label htmlFor={name} className="text-blue-gray-800 text-sm">
+            <label htmlFor={name} className="text-gray-800 text-sm ">
               {label?.substring(0, label?.length - 1)}
               <span
                 className={
@@ -40,6 +40,7 @@ function ControlledInput({
             id={name}
             readOnly={readOnly}
             // value={defaultValue}
+
             type={type}
             className="!border-1 !border-gray-400 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-primary  "
             labelProps={{
@@ -49,7 +50,7 @@ function ControlledInput({
               className: width ? `w-[${width}]` : "min-w-[100px]",
             }}
             {...field}
-            defaultValue={defaultValue ? defaultValue : ""}
+            // defaultValue={defaultValue ? defaultValue : ""}
             placeholder={placeholder}
             icon={icon}
             min={min}
