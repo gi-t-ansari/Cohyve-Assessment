@@ -2,6 +2,7 @@ import { Navigate } from "react-router";
 import { useSelector } from "react-redux";
 import { APP_URL } from "../../../config";
 import { userSelector } from "../../../redux/slices/userSlice";
+import { NoAuthLayout } from "../../layout";
 
 const requireNoAuth = (Component) => {
   function NoAuthHoc(props) {
@@ -11,14 +12,16 @@ const requireNoAuth = (Component) => {
     return isAuthenticated ? (
       <Navigate to={APP_URL.HOME} />
     ) : (
-      <Component {...props} />
+      <NoAuthLayout>
+        <Component {...props} />
+      </NoAuthLayout>
     );
   }
 
   return (
-    <div className={`w-full min-h-screen flex justify-center items-center `}>
-      <NoAuthHoc />
-    </div>
+    //
+    <NoAuthHoc />
+    // </div>
   );
 };
 export default requireNoAuth;

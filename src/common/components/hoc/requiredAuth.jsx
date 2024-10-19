@@ -4,16 +4,16 @@ import { useSelector } from "react-redux";
 import { userSelector } from "../../../redux/slices/userSlice";
 
 import { APP_URL } from "../../../config";
-import Layout from "../../layout/Layout";
+import { AuthLayout } from "../../layout";
 
 const requireAuth = (Component) => {
   function AuthHoc(props) {
     const { isAuthenticated } = useSelector(userSelector);
 
     return isAuthenticated ? (
-      <Layout>
+      <AuthLayout>
         <Component {...props} />
-      </Layout>
+      </AuthLayout>
     ) : (
       <Navigate to={APP_URL.COMET} />
     );

@@ -9,12 +9,18 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { NAVBAR_NO_AUTH_TABS_CONTENT } from "../../config";
 import { GoNorthStar } from "react-icons/go";
+import { useSelector } from "react-redux";
+import { userSelector } from "../../redux/slices/userSlice";
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const { isAuthenticated } = useSelector(userSelector);
+
   //   console.log(pathname);
 
-  return (
+  return isAuthenticated ? (
+    <nav>Navbar</nav>
+  ) : (
     <nav className="w-full flex justify-center">
       <Tabs value="html">
         <TabsHeader
