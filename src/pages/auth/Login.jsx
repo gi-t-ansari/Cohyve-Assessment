@@ -22,7 +22,7 @@ const Login = () => {
   const { user } = useSelector(userSelector);
   console.log(user?.username);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const schema = yup.object().shape({
     username: yup

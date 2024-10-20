@@ -1,7 +1,8 @@
 import React from "react";
+import Home from "../home/Home";
 
 const Upgrade = () => {
-  return <div>Upgrade</div>;
+  return <Home />;
 };
 
 export default Upgrade;
